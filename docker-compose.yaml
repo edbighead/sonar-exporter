@@ -1,0 +1,13 @@
+    
+version: '3'
+services:
+  grafana:
+    container_name: sonar-exporter
+    privileged: true
+    image: edbighead/sonar-exporter:0.1
+    volumes:
+      - ${PWD}/config.ini:/go/src/app/config.ini
+networks:
+  default:
+    external:
+      name: sonar_default
